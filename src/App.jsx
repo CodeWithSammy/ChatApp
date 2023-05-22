@@ -8,7 +8,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
@@ -21,7 +21,7 @@ function App() {
           }
         />
       </Routes>
-    </div>
+    </AuthProvider>
   );
 }
 
