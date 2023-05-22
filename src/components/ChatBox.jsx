@@ -3,13 +3,13 @@ import Message from './Message'
 const messages =[
     {
         id: 1,
-        text:"Hiii",
-        name: "Daisy"
+        text:"Hello there",
+        name: "Sam"
     },
     {
         id: 2,
-        text:"Hey",
-        name: "Samuel"
+        text:"noice",
+        name: "Dan"
     }
 ]
 const ChatBox = () => {
