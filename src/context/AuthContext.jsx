@@ -4,7 +4,7 @@ import {
   signInWithRedirect,
   onAuthStateChanged,
   signOut,
-} from "firebase/auth";
+} from "firebase/auth"; 
 import { auth } from "../firebase";
 
 // create context
