@@ -6,7 +6,6 @@ import {
   signOut,
 } from "firebase/auth"; 
 import { auth } from "../firebase";
-
 // create context
 const AuthContext = createContext();
 // Provider Context
