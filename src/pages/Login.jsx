@@ -1,6 +1,26 @@
-import React from "react";
+import { useEffect } from "react";
+import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const {currentUser, signinWithGoogle} = UserAuth();
+  console.log(currentUser)
+  
+  const handleLogin = async () =>{
+    try {
+      await signinWithGoogle();
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    if(currentUser) {
+      navigate("/chat")
+    }
+  }, [currentUser]);
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -10,7 +30,7 @@ const Login = () => {
             <p className="py-6">
               Custom Chat App made for a special friend of mine
             </p>
-            <button className="btn btn-primary">Login </button>
+            <button onClick={handleLogin} className="btn btn-primary">Login </button>
           </div>
         </div>
       </div>
